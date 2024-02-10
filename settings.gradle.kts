@@ -15,4 +15,6 @@ dependencyResolutionManagement {
 
 rootProject.name = "Jahez Task"
 include(":app")
- 
+include(":domain")
+include(":data")
+include(":ui")
