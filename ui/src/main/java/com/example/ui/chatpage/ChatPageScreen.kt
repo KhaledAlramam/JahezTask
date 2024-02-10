@@ -2,7 +2,9 @@ package com.example.ui.chatpage
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
@@ -30,6 +32,7 @@ fun ChatPageScreen() {
             .padding(top = 70.dp, start = 16.dp, end = 16.dp, bottom = 16.dp)
     ) {
         ChatScreenHeader("Mohammed", {}, {})
+        Spacer(modifier = Modifier.height(10.dp))
         LazyColumn(
             modifier = Modifier
                 .weight(1f)
