@@ -9,7 +9,6 @@ import androidx.compose.foundation.lazy.items
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
-import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
@@ -19,12 +18,10 @@ import com.example.ui.components.ChatScreenHeader
 import com.example.ui.components.ChatTextFieldWithSendButton
 import com.example.ui.components.MessageItem
 import com.example.ui.viewmodel.ChatPageViewModel
-import kotlinx.coroutines.launch
 
 @Composable
 fun ChatPageScreen() {
     val chatViewModel: ChatPageViewModel = viewModel()
-    val coroutineScope = rememberCoroutineScope()
     val messages by chatViewModel.messages.collectAsState()
 
     Column(
@@ -49,9 +46,8 @@ fun ChatPageScreen() {
         }
 
         ChatTextFieldWithSendButton(onSendClicked = {
-            coroutineScope.launch {
-                chatViewModel.sendMessage(it)
-            }
+            chatViewModel.sendMessage(it)
+
         })
     }
 }
